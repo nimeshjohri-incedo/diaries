@@ -7,21 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		133B2FC1DA804BC894C6B6F4 /* Pods_Kitchen_Diaries.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49C2EBADFBD8CE00E03EA410 /* Pods_Kitchen_Diaries.framework */; };
+		3060775920B579660035D3D5 /* KDHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3060775820B579660035D3D5 /* KDHomeViewController.swift */; };
+		3060776120B591D70035D3D5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3060776020B591D70035D3D5 /* HomeViewController.swift */; };
+		3060776320B591E40035D3D5 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3060776220B591E40035D3D5 /* SearchViewController.swift */; };
+		3060776520B592970035D3D5 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3060776420B592970035D3D5 /* AccountViewController.swift */; };
 		3094F20A20AA8F3F004DBF8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3094F20920AA8F3F004DBF8E /* AppDelegate.swift */; };
-		3094F20C20AA8F3F004DBF8E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3094F20B20AA8F3F004DBF8E /* ViewController.swift */; };
 		3094F20F20AA8F3F004DBF8E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3094F20D20AA8F3F004DBF8E /* Main.storyboard */; };
 		3094F21120AA8F41004DBF8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3094F21020AA8F41004DBF8E /* Assets.xcassets */; };
 		3094F21420AA8F41004DBF8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3094F21220AA8F41004DBF8E /* LaunchScreen.storyboard */; };
+		3094F22220ADEE90004DBF8E /* coollogo_com-271581330.png in Resources */ = {isa = PBXBuildFile; fileRef = 3094F22120ADEE90004DBF8E /* coollogo_com-271581330.png */; };
+		30E0EA4320BD0FA300CFDC75 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E0EA4220BD0FA300CFDC75 /* WebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2DAB847FAC6C0D577057291D /* Pods-Kitchen Diaries.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kitchen Diaries.release.xcconfig"; path = "Pods/Target Support Files/Pods-Kitchen Diaries/Pods-Kitchen Diaries.release.xcconfig"; sourceTree = "<group>"; };
+		3060775820B579660035D3D5 /* KDHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KDHomeViewController.swift; sourceTree = "<group>"; };
+		3060776020B591D70035D3D5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		3060776220B591E40035D3D5 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		3060776420B592970035D3D5 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		3094F20620AA8F3F004DBF8E /* Kitchen Diaries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kitchen Diaries.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3094F20920AA8F3F004DBF8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3094F20B20AA8F3F004DBF8E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3094F20E20AA8F3F004DBF8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3094F21020AA8F41004DBF8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3094F21320AA8F41004DBF8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3094F21520AA8F41004DBF8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3094F22120ADEE90004DBF8E /* coollogo_com-271581330.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "coollogo_com-271581330.png"; path = "../../../../../Downloads/coollogo_com-271581330.png"; sourceTree = "<group>"; };
+		30E0EA4220BD0FA300CFDC75 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		49C2EBADFBD8CE00E03EA410 /* Pods_Kitchen_Diaries.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kitchen_Diaries.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		825F6B027B9BF99D6AE3D574 /* Pods-Kitchen Diaries.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kitchen Diaries.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Kitchen Diaries/Pods-Kitchen Diaries.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +43,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				133B2FC1DA804BC894C6B6F4 /* Pods_Kitchen_Diaries.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F2ECF42877A0EC6DD954843 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				825F6B027B9BF99D6AE3D574 /* Pods-Kitchen Diaries.debug.xcconfig */,
+				2DAB847FAC6C0D577057291D /* Pods-Kitchen Diaries.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		3094F1FD20AA8F3F004DBF8E = {
 			isa = PBXGroup;
 			children = (
 				3094F20820AA8F3F004DBF8E /* Kitchen Diaries */,
 				3094F20720AA8F3F004DBF8E /* Products */,
+				1F2ECF42877A0EC6DD954843 /* Pods */,
+				F4FDCE1A32F16728E644CA17 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +80,27 @@
 		3094F20820AA8F3F004DBF8E /* Kitchen Diaries */ = {
 			isa = PBXGroup;
 			children = (
+				3060776420B592970035D3D5 /* AccountViewController.swift */,
 				3094F20920AA8F3F004DBF8E /* AppDelegate.swift */,
-				3094F20B20AA8F3F004DBF8E /* ViewController.swift */,
 				3094F20D20AA8F3F004DBF8E /* Main.storyboard */,
+				3060775820B579660035D3D5 /* KDHomeViewController.swift */,
+				30E0EA4220BD0FA300CFDC75 /* WebViewController.swift */,
+				3060776020B591D70035D3D5 /* HomeViewController.swift */,
+				3060776220B591E40035D3D5 /* SearchViewController.swift */,
 				3094F21020AA8F41004DBF8E /* Assets.xcassets */,
 				3094F21220AA8F41004DBF8E /* LaunchScreen.storyboard */,
+				3094F22120ADEE90004DBF8E /* coollogo_com-271581330.png */,
 				3094F21520AA8F41004DBF8E /* Info.plist */,
 			);
 			path = "Kitchen Diaries";
+			sourceTree = "<group>";
+		};
+		F4FDCE1A32F16728E644CA17 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				49C2EBADFBD8CE00E03EA410 /* Pods_Kitchen_Diaries.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +110,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3094F21820AA8F41004DBF8E /* Build configuration list for PBXNativeTarget "Kitchen Diaries" */;
 			buildPhases = (
+				4E99442BF4CFA5DCA3D72D7E /* [CP] Check Pods Manifest.lock */,
 				3094F20220AA8F3F004DBF8E /* Sources */,
 				3094F20320AA8F3F004DBF8E /* Frameworks */,
 				3094F20420AA8F3F004DBF8E /* Resources */,
+				D97F5E95992B6EC8EBA3E035 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -122,6 +163,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3094F22220ADEE90004DBF8E /* coollogo_com-271581330.png in Resources */,
 				3094F21420AA8F41004DBF8E /* LaunchScreen.storyboard in Resources */,
 				3094F21120AA8F41004DBF8E /* Assets.xcassets in Resources */,
 				3094F20F20AA8F3F004DBF8E /* Main.storyboard in Resources */,
@@ -130,13 +172,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4E99442BF4CFA5DCA3D72D7E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Kitchen Diaries-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D97F5E95992B6EC8EBA3E035 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Kitchen Diaries/Pods-Kitchen Diaries-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Kitchen Diaries/Pods-Kitchen Diaries-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3094F20220AA8F3F004DBF8E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3094F20C20AA8F3F004DBF8E /* ViewController.swift in Sources */,
+				3060776320B591E40035D3D5 /* SearchViewController.swift in Sources */,
+				30E0EA4320BD0FA300CFDC75 /* WebViewController.swift in Sources */,
+				3060776520B592970035D3D5 /* AccountViewController.swift in Sources */,
+				3060775920B579660035D3D5 /* KDHomeViewController.swift in Sources */,
 				3094F20A20AA8F3F004DBF8E /* AppDelegate.swift in Sources */,
+				3060776120B591D70035D3D5 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,11 +369,13 @@
 		};
 		3094F21920AA8F41004DBF8E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 825F6B027B9BF99D6AE3D574 /* Pods-Kitchen Diaries.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6S5YKP8N7Y;
 				INFOPLIST_FILE = "Kitchen Diaries/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -296,11 +389,13 @@
 		};
 		3094F21A20AA8F41004DBF8E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2DAB847FAC6C0D577057291D /* Pods-Kitchen Diaries.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6S5YKP8N7Y;
 				INFOPLIST_FILE = "Kitchen Diaries/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
