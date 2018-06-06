@@ -8,7 +8,6 @@ target 'Kitchen Diaries' do
     pod 'Alamofire', '~> 4.0'
     pod 'NVActivityIndicatorView'
     pod 'SDWebImage'
-    #pod 'AlamofireImage'
     # Pods for Kitchen Diaries
     
 end

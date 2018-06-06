@@ -12,7 +12,6 @@ import SwiftyJSON
 import NVActivityIndicatorView
 import SDWebImage
 
-
 class categoriesTableViewCell: UITableViewCell {
     @IBOutlet weak var cellView: UIView!
     @IBOutlet weak var headLabel: UILabel!
@@ -53,12 +52,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         let url = URL(string: urlString as! String )
         if(url != nil) {
             cell.foodImage?.sd_setImage(with: url, placeholderImage:UIImage(named: "boardTextArea.png"))
-//            self.getDataFromUrl(url: url!) { data, response, error in
-//                guard let data = data, error == nil else { return }
-//                DispatchQueue.main.async() {
-//                    cell.foodImage?.image = UIImage(data: data)
-//                }
-//            }
         }
         return cell
     }
@@ -68,6 +61,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "recipeWebView", sender: self)
     }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 310.0;//Choose your custom row height
+    }
     @IBOutlet weak var HomeTiles: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,27 +71,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     func apiDataFetch() {
         startAnimating(CGSize(width: 60, height: 60), message: "Serving.. Just a second")
-        if(globalSearch == "") {
-            var foodType = String()
-            let date     = Date()
-            let calendar = Calendar.current
-            let hour     = calendar.component(.hour, from: date)
-            //let minutes  = calendar.component(.minute, from: date)
-            let morning = 3; let afternoon=12; let evening=16; let night=22;
-            if morning < hour, hour < afternoon {
-                foodType = "breakfast"
-            }else if afternoon < hour, hour < evening{
-                foodType = "lunch"
-            }else if evening < hour, hour < night{
-                foodType = "dinner"
-            }else{
-                foodType = "diet"
-            }
-            globalSearch = foodType
-        }
         self.HomeTiles!.register(categoriesTableViewCell.self, forCellReuseIdentifier: "categoriesTableViewCell")
         var apiURL = String()
-        apiURL = "https://food2fork.com/api/search?key=db6356d5fea03017abb29532c24a4090&sort=\(sortType)"
+        apiURL = "https://food2fork.com/api/search?key=db6356d5fea03017abb29532c24a4090&q=\(globalSearch)&sort=\(sortType)"
         print(apiURL)
         Alamofire.request(apiURL).responseJSON { (responseData) -> Void in
             if((responseData.result.value) != nil) {
@@ -103,7 +81,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 
                 if let resData = swiftyJsonVar["recipes"].arrayObject {
                     self.arrRes = resData as! [[String:AnyObject]]
-                    print(self.arrRes)
+                    //print(self.arrRes)
                 }
                 if self.arrRes.count > 0 {
                     self.HomeTiles.reloadData()

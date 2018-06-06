@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		133B2FC1DA804BC894C6B6F4 /* Pods_Kitchen_Diaries.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49C2EBADFBD8CE00E03EA410 /* Pods_Kitchen_Diaries.framework */; };
 		3060775920B579660035D3D5 /* KDHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3060775820B579660035D3D5 /* KDHomeViewController.swift */; };
 		3060776120B591D70035D3D5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3060776020B591D70035D3D5 /* HomeViewController.swift */; };
 		3060776320B591E40035D3D5 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3060776220B591E40035D3D5 /* SearchViewController.swift */; };
@@ -18,10 +17,10 @@
 		3094F21420AA8F41004DBF8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3094F21220AA8F41004DBF8E /* LaunchScreen.storyboard */; };
 		3094F22220ADEE90004DBF8E /* coollogo_com-271581330.png in Resources */ = {isa = PBXBuildFile; fileRef = 3094F22120ADEE90004DBF8E /* coollogo_com-271581330.png */; };
 		30E0EA4320BD0FA300CFDC75 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E0EA4220BD0FA300CFDC75 /* WebViewController.swift */; };
+		BA9A8018E52EDF601BF952F4 /* Pods_Kitchen_Diaries.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 898FBB4A6870C0D3C6974CEE /* Pods_Kitchen_Diaries.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2DAB847FAC6C0D577057291D /* Pods-Kitchen Diaries.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kitchen Diaries.release.xcconfig"; path = "Pods/Target Support Files/Pods-Kitchen Diaries/Pods-Kitchen Diaries.release.xcconfig"; sourceTree = "<group>"; };
 		3060775820B579660035D3D5 /* KDHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KDHomeViewController.swift; sourceTree = "<group>"; };
 		3060776020B591D70035D3D5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		3060776220B591E40035D3D5 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -34,8 +33,9 @@
 		3094F21520AA8F41004DBF8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3094F22120ADEE90004DBF8E /* coollogo_com-271581330.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "coollogo_com-271581330.png"; path = "../../../../../Downloads/coollogo_com-271581330.png"; sourceTree = "<group>"; };
 		30E0EA4220BD0FA300CFDC75 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
-		49C2EBADFBD8CE00E03EA410 /* Pods_Kitchen_Diaries.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kitchen_Diaries.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		825F6B027B9BF99D6AE3D574 /* Pods-Kitchen Diaries.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kitchen Diaries.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Kitchen Diaries/Pods-Kitchen Diaries.debug.xcconfig"; sourceTree = "<group>"; };
+		4A1C6E1CA2B32AC709DD6FD2 /* Pods-Kitchen Diaries.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kitchen Diaries.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Kitchen Diaries/Pods-Kitchen Diaries.debug.xcconfig"; sourceTree = "<group>"; };
+		898FBB4A6870C0D3C6974CEE /* Pods_Kitchen_Diaries.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kitchen_Diaries.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6534C55760FB5A823EAC15E /* Pods-Kitchen Diaries.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kitchen Diaries.release.xcconfig"; path = "Pods/Target Support Files/Pods-Kitchen Diaries/Pods-Kitchen Diaries.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,29 +43,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				133B2FC1DA804BC894C6B6F4 /* Pods_Kitchen_Diaries.framework in Frameworks */,
+				BA9A8018E52EDF601BF952F4 /* Pods_Kitchen_Diaries.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1F2ECF42877A0EC6DD954843 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				825F6B027B9BF99D6AE3D574 /* Pods-Kitchen Diaries.debug.xcconfig */,
-				2DAB847FAC6C0D577057291D /* Pods-Kitchen Diaries.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		3094F1FD20AA8F3F004DBF8E = {
 			isa = PBXGroup;
 			children = (
 				3094F20820AA8F3F004DBF8E /* Kitchen Diaries */,
 				3094F20720AA8F3F004DBF8E /* Products */,
-				1F2ECF42877A0EC6DD954843 /* Pods */,
-				F4FDCE1A32F16728E644CA17 /* Frameworks */,
+				82915CCD62E9F334B3F1AC8A /* Pods */,
+				8A2D33EF9B40ACCD72DB40FA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -95,10 +86,19 @@
 			path = "Kitchen Diaries";
 			sourceTree = "<group>";
 		};
-		F4FDCE1A32F16728E644CA17 /* Frameworks */ = {
+		82915CCD62E9F334B3F1AC8A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				49C2EBADFBD8CE00E03EA410 /* Pods_Kitchen_Diaries.framework */,
+				4A1C6E1CA2B32AC709DD6FD2 /* Pods-Kitchen Diaries.debug.xcconfig */,
+				A6534C55760FB5A823EAC15E /* Pods-Kitchen Diaries.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		8A2D33EF9B40ACCD72DB40FA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				898FBB4A6870C0D3C6974CEE /* Pods_Kitchen_Diaries.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -110,11 +110,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3094F21820AA8F41004DBF8E /* Build configuration list for PBXNativeTarget "Kitchen Diaries" */;
 			buildPhases = (
-				4E99442BF4CFA5DCA3D72D7E /* [CP] Check Pods Manifest.lock */,
+				ED6B3C2FB90CA1F576E08C4C /* [CP] Check Pods Manifest.lock */,
 				3094F20220AA8F3F004DBF8E /* Sources */,
 				3094F20320AA8F3F004DBF8E /* Frameworks */,
 				3094F20420AA8F3F004DBF8E /* Resources */,
-				D97F5E95992B6EC8EBA3E035 /* [CP] Embed Pods Frameworks */,
+				F8A68B498F8B1CCD03151073 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -173,7 +173,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4E99442BF4CFA5DCA3D72D7E /* [CP] Check Pods Manifest.lock */ = {
+		ED6B3C2FB90CA1F576E08C4C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -191,7 +191,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D97F5E95992B6EC8EBA3E035 /* [CP] Embed Pods Frameworks */ = {
+		F8A68B498F8B1CCD03151073 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -369,7 +369,7 @@
 		};
 		3094F21920AA8F41004DBF8E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 825F6B027B9BF99D6AE3D574 /* Pods-Kitchen Diaries.debug.xcconfig */;
+			baseConfigurationReference = 4A1C6E1CA2B32AC709DD6FD2 /* Pods-Kitchen Diaries.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -389,7 +389,7 @@
 		};
 		3094F21A20AA8F41004DBF8E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2DAB847FAC6C0D577057291D /* Pods-Kitchen Diaries.release.xcconfig */;
+			baseConfigurationReference = A6534C55760FB5A823EAC15E /* Pods-Kitchen Diaries.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
