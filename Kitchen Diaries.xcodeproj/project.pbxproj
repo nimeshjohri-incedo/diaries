@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		30062D3B20CA409900909A2E /* supportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30062D3A20CA409900909A2E /* supportViewController.swift */; };
+		30225C3D20CE3D4200F323D9 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30225C3C20CE3D4200F323D9 /* FavoritesViewController.swift */; };
 		3060775920B579660035D3D5 /* KDHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3060775820B579660035D3D5 /* KDHomeViewController.swift */; };
 		3060776120B591D70035D3D5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3060776020B591D70035D3D5 /* HomeViewController.swift */; };
 		3060776320B591E40035D3D5 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3060776220B591E40035D3D5 /* SearchViewController.swift */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		30062D3A20CA409900909A2E /* supportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = supportViewController.swift; sourceTree = "<group>"; };
+		30225C3C20CE3D4200F323D9 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		3060775820B579660035D3D5 /* KDHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KDHomeViewController.swift; sourceTree = "<group>"; };
 		3060776020B591D70035D3D5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		3060776220B591E40035D3D5 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +82,8 @@
 				30E0EA4220BD0FA300CFDC75 /* WebViewController.swift */,
 				3060776020B591D70035D3D5 /* HomeViewController.swift */,
 				3060776220B591E40035D3D5 /* SearchViewController.swift */,
+				30062D3A20CA409900909A2E /* supportViewController.swift */,
+				30225C3C20CE3D4200F323D9 /* FavoritesViewController.swift */,
 				3094F21020AA8F41004DBF8E /* Assets.xcassets */,
 				3094F21220AA8F41004DBF8E /* LaunchScreen.storyboard */,
 				3094F22120ADEE90004DBF8E /* coollogo_com-271581330.png */,
@@ -224,8 +230,10 @@
 			files = (
 				3060776320B591E40035D3D5 /* SearchViewController.swift in Sources */,
 				30E0EA4320BD0FA300CFDC75 /* WebViewController.swift in Sources */,
+				30225C3D20CE3D4200F323D9 /* FavoritesViewController.swift in Sources */,
 				3060776520B592970035D3D5 /* AccountViewController.swift in Sources */,
 				3060775920B579660035D3D5 /* KDHomeViewController.swift in Sources */,
+				30062D3B20CA409900909A2E /* supportViewController.swift in Sources */,
 				3094F20A20AA8F3F004DBF8E /* AppDelegate.swift in Sources */,
 				3060776120B591D70035D3D5 /* HomeViewController.swift in Sources */,
 			);
