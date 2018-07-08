@@ -1,24 +1,39 @@
-//
-//  SearchViewController.swift
-//  Kitchen Diaries
-//
-//  Created by Nimesh Johri on 5/23/18.
-//  Copyright © 2018 Nimesh Johri. All rights reserved.
-//
-
 import UIKit
 import Alamofire
 import SwiftyJSON
 import NVActivityIndicatorView
 import SDWebImage
+import GoogleMobileAds
+
+protocol searchTableViewCellDelegate:AnyObject {
+    func didSelectButton(indexNumber:Int?) -> Void
+}
 
 class searchTableViewCell: UITableViewCell {
     @IBOutlet weak var searchCellView: UIView!
     @IBOutlet weak var searchResultImage: UIImageView!
     @IBOutlet weak var searchResultLabel: UILabel!
+    @IBOutlet weak var favoriteBtn: UIButton!
+    var indexNumber :Int?
+    var isSelectedCell :Bool?
+    var image_name = "heart outline blank"
+    weak var delegate:searchTableViewCellDelegate?
+    @IBAction func likeButton(_ sender: UIButton) {
+        if self.delegate != nil {
+            //            if (self.delegate?.responds(to: #selector(categoriesTableViewCellDelegate.didSelectButton(indexNumber))))! {
+            self.delegate?.didSelectButton(indexNumber: self.indexNumber)
+            if(self.image_name == "heart outline filled") {
+                self.image_name = "heart outline blank"
+            } else {
+                self.image_name = "heart outline filled"
+            }
+            sender.setImage(UIImage(named: self.image_name), for: .normal)
+        }
+        //      }
+    }
 }
 
-class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource, NVActivityIndicatorViewable {
+class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource, NVActivityIndicatorViewable, searchTableViewCellDelegate {
     var arrRes = [[String:AnyObject]]() //Array of dictionary
     var tableArray = [String] ()
     var globalSearch = ""
@@ -38,13 +53,84 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
             completion(data, response, error)
             }.resume()
     }
+    
+    func checkIsAddedOnFavorite(recipeId: String?) -> Bool {
+        var isFound = false
+        if let recipeId = recipeId {
+            for dictionary in favoriteArray {
+                if dictionary["recipe_id"] as? String == recipeId {
+                    isFound = true
+                    break
+                }
+            }
+        }
+        return isFound
+    }
+    
+    func removeFromFavorite(recipeId: String?) -> Void {
+        var indexNumber:Int?
+        if let recipeId = recipeId {
+            for (index, element) in favoriteArray.enumerated(){
+                if element["recipe_id"] as? String == recipeId {
+                    indexNumber = index
+                    break
+                }
+            }
+        }
+        if indexNumber != nil {
+            favoriteArray.remove(at: indexNumber!)
+        }
+    }
+    
+    func didSelectButton(indexNumber:Int?) -> Void{
+        let selected = arrRes[indexNumber!]
+        let size = favoriteArray.count
+        if size > 0 {
+            if !self.checkIsAddedOnFavorite(recipeId: selected["recipe_id"] as? String){
+                favoriteArray.append(selected)
+            }
+            else{
+                self.removeFromFavorite(recipeId: selected["recipe_id"] as? String)
+            }
+        } else {
+            favoriteArray.append(selected)
+        }
+        UserDefaults.standard.set(favoriteArray, forKey: "Key")
+    }
+    
+    private func isAddedOnFavorite(item:[String:AnyObject]) -> Bool {
+        var isFound = false
+        for dictionary in favoriteArray {
+            if item["recipe_id"] as? String == dictionary["recipe_id"] as? String {
+                isFound = true
+                break
+            }
+        }
+        return isFound
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if((UserDefaults.standard.object(forKey: "Key")) != nil) {
+            let returnValue = UserDefaults.standard.object(forKey: "Key") as! [[String:AnyObject]]
+            let parsedFavoriteArray = Array(returnValue)
+            favoriteArray = parsedFavoriteArray
+        }
         let cell = tableView.dequeueReusableCell(withIdentifier: "searchResultCells",for: indexPath) as! searchTableViewCell
         var dict = arrRes[indexPath.row]
+        cell.indexNumber = indexPath.row
+        cell.delegate = self
         cell.searchResultLabel?.text = dict["title"] as? String
         let urlString = dict["image_url"]
         webURL = dict["source_url"] as! String
         let url = URL(string: urlString as! String )
+        var imageName = ""
+        if self.isAddedOnFavorite(item: dict) == true{
+            imageName = "heart outline filled"
+        }
+        else{
+            imageName = "heart outline blank"
+        }
+        cell.favoriteBtn.setImage(UIImage(named: imageName), for: .normal)
         if(url != nil) {
             cell.searchResultImage?.sd_setImage(with: url, placeholderImage:UIImage(named: "boardTextArea.png"))
         }

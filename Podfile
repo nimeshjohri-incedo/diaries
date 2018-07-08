@@ -8,6 +8,7 @@ target 'Kitchen Diaries' do
     pod 'Alamofire', '~> 4.0'
     pod 'NVActivityIndicatorView'
     pod 'SDWebImage'
+    pod 'Google-Mobile-Ads-SDK'
     # Pods for Kitchen Diaries
     
 end
