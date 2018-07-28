@@ -19,10 +19,12 @@
 		3094F21420AA8F41004DBF8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3094F21220AA8F41004DBF8E /* LaunchScreen.storyboard */; };
 		3094F22220ADEE90004DBF8E /* coollogo_com-271581330.png in Resources */ = {isa = PBXBuildFile; fileRef = 3094F22120ADEE90004DBF8E /* coollogo_com-271581330.png */; };
 		30E0EA4320BD0FA300CFDC75 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E0EA4220BD0FA300CFDC75 /* WebViewController.swift */; };
+		30FA1C1520FDBDE900434C3C /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30FA1C1420FDBDE800434C3C /* AboutViewController.swift */; };
 		BA9A8018E52EDF601BF952F4 /* Pods_Kitchen_Diaries.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 898FBB4A6870C0D3C6974CEE /* Pods_Kitchen_Diaries.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3002AB2520F99DD50050D2EB /* ShareAppExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ShareAppExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		30062D3A20CA409900909A2E /* supportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = supportViewController.swift; sourceTree = "<group>"; };
 		30225C3C20CE3D4200F323D9 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		3060775820B579660035D3D5 /* KDHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KDHomeViewController.swift; sourceTree = "<group>"; };
@@ -37,12 +39,20 @@
 		3094F21520AA8F41004DBF8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3094F22120ADEE90004DBF8E /* coollogo_com-271581330.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "coollogo_com-271581330.png"; path = "../../../../../Downloads/coollogo_com-271581330.png"; sourceTree = "<group>"; };
 		30E0EA4220BD0FA300CFDC75 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		30FA1C1420FDBDE800434C3C /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		4A1C6E1CA2B32AC709DD6FD2 /* Pods-Kitchen Diaries.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kitchen Diaries.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Kitchen Diaries/Pods-Kitchen Diaries.debug.xcconfig"; sourceTree = "<group>"; };
 		898FBB4A6870C0D3C6974CEE /* Pods_Kitchen_Diaries.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kitchen_Diaries.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6534C55760FB5A823EAC15E /* Pods-Kitchen Diaries.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kitchen Diaries.release.xcconfig"; path = "Pods/Target Support Files/Pods-Kitchen Diaries/Pods-Kitchen Diaries.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		3002AB2220F99DD50050D2EB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3094F20320AA8F3F004DBF8E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -68,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				3094F20620AA8F3F004DBF8E /* Kitchen Diaries.app */,
+				3002AB2520F99DD50050D2EB /* ShareAppExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -83,6 +94,7 @@
 				3060776020B591D70035D3D5 /* HomeViewController.swift */,
 				3060776220B591E40035D3D5 /* SearchViewController.swift */,
 				30062D3A20CA409900909A2E /* supportViewController.swift */,
+				30FA1C1420FDBDE800434C3C /* AboutViewController.swift */,
 				30225C3C20CE3D4200F323D9 /* FavoritesViewController.swift */,
 				3094F21020AA8F41004DBF8E /* Assets.xcassets */,
 				3094F21220AA8F41004DBF8E /* LaunchScreen.storyboard */,
@@ -112,6 +124,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		3002AB2420F99DD50050D2EB /* ShareAppExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3002AB3220F99DD50050D2EB /* Build configuration list for PBXNativeTarget "ShareAppExtension" */;
+			buildPhases = (
+				3002AB2120F99DD50050D2EB /* Sources */,
+				3002AB2220F99DD50050D2EB /* Frameworks */,
+				3002AB2320F99DD50050D2EB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ShareAppExtension;
+			productName = ShareAppExtension;
+			productReference = 3002AB2520F99DD50050D2EB /* ShareAppExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		3094F20520AA8F3F004DBF8E /* Kitchen Diaries */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3094F21820AA8F41004DBF8E /* Build configuration list for PBXNativeTarget "Kitchen Diaries" */;
@@ -137,12 +166,25 @@
 		3094F1FE20AA8F3F004DBF8E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0930;
+				LastSwiftUpdateCheck = 0940;
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Nimesh Johri";
 				TargetAttributes = {
+					3002AB2420F99DD50050D2EB = {
+						CreatedOnToolsVersion = 9.4.1;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 0;
+							};
+						};
+					};
 					3094F20520AA8F3F004DBF8E = {
 						CreatedOnToolsVersion = 9.3;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -160,11 +202,19 @@
 			projectRoot = "";
 			targets = (
 				3094F20520AA8F3F004DBF8E /* Kitchen Diaries */,
+				3002AB2420F99DD50050D2EB /* ShareAppExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		3002AB2320F99DD50050D2EB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3094F20420AA8F3F004DBF8E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -224,6 +274,13 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		3002AB2120F99DD50050D2EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3094F20220AA8F3F004DBF8E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -231,6 +288,7 @@
 				3060776320B591E40035D3D5 /* SearchViewController.swift in Sources */,
 				30E0EA4320BD0FA300CFDC75 /* WebViewController.swift in Sources */,
 				30225C3D20CE3D4200F323D9 /* FavoritesViewController.swift in Sources */,
+				30FA1C1520FDBDE900434C3C /* AboutViewController.swift in Sources */,
 				3060776520B592970035D3D5 /* AccountViewController.swift in Sources */,
 				3060775920B579660035D3D5 /* KDHomeViewController.swift in Sources */,
 				30062D3B20CA409900909A2E /* supportViewController.swift in Sources */,
@@ -261,6 +319,38 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		3002AB3020F99DD50050D2EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6S5YKP8N7Y;
+				INFOPLIST_FILE = ShareAppExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nimeshjohri.Kitchen-Diaries.ShareAppExtension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3002AB3120F99DD50050D2EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6S5YKP8N7Y;
+				INFOPLIST_FILE = ShareAppExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nimeshjohri.Kitchen-Diaries.ShareAppExtension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		3094F21620AA8F41004DBF8E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -383,11 +473,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6S5YKP8N7Y;
 				INFOPLIST_FILE = "Kitchen Diaries/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nimeshjohri.Kitchen-Diaries";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -403,11 +490,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6S5YKP8N7Y;
 				INFOPLIST_FILE = "Kitchen Diaries/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nimeshjohri.Kitchen-Diaries";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -418,6 +502,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		3002AB3220F99DD50050D2EB /* Build configuration list for PBXNativeTarget "ShareAppExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3002AB3020F99DD50050D2EB /* Debug */,
+				3002AB3120F99DD50050D2EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		3094F20120AA8F3F004DBF8E /* Build configuration list for PBXProject "Kitchen Diaries" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

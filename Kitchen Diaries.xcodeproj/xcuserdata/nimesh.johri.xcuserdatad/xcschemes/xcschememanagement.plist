@@ -6,8 +6,23 @@
 	<dict>
 		<key>Kitchen Diaries.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<true/>
 			<key>orderHint</key>
 			<integer>5</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>3002AB2420F99DD50050D2EB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3094F20520AA8F3F004DBF8E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

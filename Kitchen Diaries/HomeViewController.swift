@@ -1,4 +1,5 @@
 import UIKit
+import Social
 import Alamofire
 import SwiftyJSON
 import NVActivityIndicatorView
@@ -7,6 +8,7 @@ import GoogleMobileAds
 
 protocol categoriesTableViewCellDelegate:AnyObject {
     func didSelectButton(indexNumber:Int?) -> Void
+    func didSocialSelectButton(indexNumber:Int?) -> Void
 }
 
 class categoriesTableViewCell: UITableViewCell {
@@ -14,6 +16,13 @@ class categoriesTableViewCell: UITableViewCell {
     @IBOutlet weak var headLabel: UILabel!
     @IBOutlet weak var foodImage: UIImageView!
     @IBOutlet weak var btnFavorite: UIButton!
+    
+    @IBOutlet weak var publisherLabel: UILabel!
+    @IBAction func socialSharing(_ sender: UIButton) {
+        if self.delegate != nil {
+            self.delegate?.didSocialSelectButton(indexNumber: self.indexNumber)
+        }
+    }
     var indexNumber :Int?
     var isSelectedCell :Bool?
     var image_name = "heart outline blank"
@@ -98,6 +107,16 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         UserDefaults.standard.set(favoriteArray, forKey: "Key")
     }
+     var activityViewController:UIActivityViewController?
+    func didSocialSelectButton(indexNumber:Int?) -> Void{
+        let selectedCell = arrRes[indexNumber!]
+        let linkToBeShared = selectedCell["source_url"] as! String
+        print(linkToBeShared)
+        activityViewController = UIActivityViewController(
+            activityItems: [linkToBeShared as NSString],
+            applicationActivities: nil)
+        present(activityViewController!, animated: true, completion: nil)
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
@@ -107,7 +126,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         return true
     }
-    
     private func isAddedOnFavorite(item:[String:AnyObject]) -> Bool {
         var isFound = false
         for dictionary in favoriteArray {
@@ -129,7 +147,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             var dict = arrRes[indexPath.row]
             cell.indexNumber = indexPath.row
             cell.delegate = self
-            cell.headLabel?.text = dict["title"] as? String
+            var cellLabelString = (dict["title"]) as? String
+            cellLabelString = cellLabelString?.replacingOccurrences(of: "amp;", with: "")
+            cell.headLabel?.text = cellLabelString
+            cell.publisherLabel?.text = dict["publisher"] as? String
             let urlString = dict["image_url"]
             webURL = dict["source_url"] as! String
             let url = URL(string: urlString as! String )
@@ -150,7 +171,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         return arrRes.count
     }
     func adViewDidReceiveAd(_ bannerView: GADBannerView) {
-        print("Banner loaded successfully")
         HomeTiles.tableHeaderView?.frame = bannerView.frame
         HomeTiles.tableHeaderView = bannerView
         HomeTiles.tableFooterView?.frame = bannerView.frame
@@ -165,7 +185,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         performSegue(withIdentifier: "recipeWebView", sender: self)
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 310.0;//Choose your custom row height
+        return 440.0;//Choose your custom row height
     }
     @IBOutlet weak var HomeTiles: UITableView!
     override func viewDidLoad() {
@@ -182,17 +202,25 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         startAnimating(CGSize(width: 60, height: 60), message: "Serving.. Just a second")
         self.HomeTiles!.register(categoriesTableViewCell.self, forCellReuseIdentifier: "categoriesTableViewCell")
         var apiURL = String()
-        apiURL = "https://food2fork.com/api/search?key=db6356d5fea03017abb29532c24a4090&q=\(globalSearch)&sort=\(sortType)"
+        let keywords = ["Best", "Top", "healthy"]
+        let number = Int(arc4random_uniform(UInt32(3)))
+        globalSearch = keywords[number]
+        apiURL = "https://food2fork.com/api/search?key=db6356d5fea03017abb29532c24a4090&q=\(globalSearch)"
         print(apiURL)
         Alamofire.request(apiURL).responseJSON { (responseData) -> Void in
-            if((responseData.result.value) != nil) {
-                let swiftyJsonVar = JSON(responseData.result.value!)
-                if let resData = swiftyJsonVar["recipes"].arrayObject {
-                    self.arrRes = resData as! [[String:AnyObject]]
+            if(responseData.result.isSuccess) {
+                if((responseData.result.value) != nil) {
+                    let swiftyJsonVar = JSON(responseData.result.value!)
+                    if let resData = swiftyJsonVar["recipes"].arrayObject {
+                        self.arrRes = resData as! [[String:AnyObject]]
+                    }
+                    if self.arrRes.count > 0 {
+                        self.HomeTiles.reloadData()
+                    }
+                    self.stopAnimating()
                 }
-                if self.arrRes.count > 0 {
-                    self.HomeTiles.reloadData()
-                }
+            } else if(responseData.result.isFailure) {
+                self.HomeTiles.reloadData()
                 self.stopAnimating()
             }
         }
