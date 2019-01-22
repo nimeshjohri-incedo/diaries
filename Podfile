@@ -9,6 +9,12 @@ target 'Kitchen Diaries' do
     pod 'NVActivityIndicatorView'
     pod 'SDWebImage'
     pod 'Google-Mobile-Ads-SDK'
+    pod 'FBAudienceNetwork'
+    pod 'SwiftMessages'
+    pod 'Firebase/Core'
+    pod 'Firebase/Auth'
+    pod 'Firebase/Database'
+    pod 'Firebase/Storage'
     # Pods for Kitchen Diaries
     
 end

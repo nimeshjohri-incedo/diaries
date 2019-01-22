@@ -1,0 +1,36 @@
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "6Uy-qI-998"; */
+"6Uy-qI-998.text" = "Label";
+
+/* Class = "UITextView"; text = "Kitchen Diaries was launched in 2018 with a motive to reach out to people who are in love with food.  We want to create an amazingly delicious space where you can easily find recipes all around the world, irrespective of the culture and lifestyle.  Kitchen Diaries was brought up to create a bonding place between food and soul."; ObjectID = "8ai-lx-Tdr"; */
+"8ai-lx-Tdr.text" = "Kitchen Diaries was launched in 2018 with a motive to reach out to people who are in love with food.  We want to create an amazingly delicious space where you can easily find recipes all around the world, irrespective of the culture and lifestyle.  Kitchen Diaries was brought up to create a bonding place between food and soul.";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Avh-9S-s5N"; */
+"Avh-9S-s5N.text" = "Label";
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "Mhw-pT-zHS"; */
+"Mhw-pT-zHS.title" = "Back";
+
+/* Class = "UISearchBar"; placeholder = "Search.."; ObjectID = "TiN-6B-D4k"; */
+"TiN-6B-D4k.placeholder" = "Search..";
+
+/* Class = "UISearchBar"; TiN-6B-D4k.scopeButtonTitles[0] = "Title"; ObjectID = "TiN-6B-D4k"; */
+"TiN-6B-D4k.scopeButtonTitles[0]" = "Title";
+
+/* Class = "UISearchBar"; TiN-6B-D4k.scopeButtonTitles[1] = "Title"; ObjectID = "TiN-6B-D4k"; */
+"TiN-6B-D4k.scopeButtonTitles[1]" = "Title";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "VsF-0n-1Yh"; */
+"VsF-0n-1Yh.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "YFj-C4-365"; */
+"YFj-C4-365.normalTitle" = "Submit";
+
+/* Class = "UITextField"; placeholder = "Name.."; ObjectID = "be1-d0-dhk"; */
+"be1-d0-dhk.placeholder" = "Name..";
+
+/* Class = "UITextView"; text = "\" THERE IS NO SINCERE LOVE THAN THE LOVE OF FOOD \" - George Bernard Shaw"; ObjectID = "eGa-6I-6hb"; */
+"eGa-6I-6hb.text" = "\" THERE IS NO SINCERE LOVE THAN THE LOVE OF FOOD \" - George Bernard Shaw";
+
+/* Class = "UINavigationItem"; title = " "; ObjectID = "pcm-a5-B7Q"; */
+"pcm-a5-B7Q.title" = " ";

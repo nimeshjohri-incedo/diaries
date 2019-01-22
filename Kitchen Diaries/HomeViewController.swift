@@ -1,10 +1,15 @@
 import UIKit
 import Social
+import Firebase
 import Alamofire
-import SwiftyJSON
-import NVActivityIndicatorView
 import SDWebImage
+import SwiftyJSON
+import SwiftMessages
 import GoogleMobileAds
+import FirebaseStorage
+import FirebaseDatabase
+import FBAudienceNetwork
+import NVActivityIndicatorView
 
 protocol categoriesTableViewCellDelegate:AnyObject {
     func didSelectButton(indexNumber:Int?) -> Void
@@ -44,7 +49,7 @@ class categoriesTableViewCell: UITableViewCell {
 
 var webURL = ""
 var favoriteArray = [[String:AnyObject]]()
-class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, NVActivityIndicatorViewable,categoriesTableViewCellDelegate, GADBannerViewDelegate {
+class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, NVActivityIndicatorViewable,categoriesTableViewCellDelegate, GADBannerViewDelegate, FBInterstitialAdDelegate {
     var arrRes = [[String:AnyObject]]() //Array of dictionary
     var tableArray = [String] ()
     var image_name = ""
@@ -52,6 +57,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     var sortType = "t"
     var selectindex : Int?
     var adBannerView: GADBannerView?
+    var interstitialAd: FBInterstitialAd?
     var selectedindex : NSMutableArray = NSMutableArray()
     
     func responseFromUser(searchTerm: String) {
@@ -95,11 +101,26 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     func didSelectButton(indexNumber:Int?) -> Void{
         let selected = arrRes[indexNumber!]
         let size = favoriteArray.count
+        var successConfig = SwiftMessages.defaultConfig
+        successConfig.presentationStyle = .center
+        successConfig.presentationContext = .window(windowLevel: UIWindowLevelNormal)
         if size > 0 {
             if !self.checkIsAddedOnFavorite(recipeId: selected["recipe_id"] as? String){
+                let success = MessageView.viewFromNib(layout: .cardView)
+                success.configureTheme(.success)
+                success.configureDropShadow()
+                success.configureContent(title: "", body: "Recipe added to your favorites")
+                success.button?.isHidden = true
+                SwiftMessages.show(config: successConfig, view: success)
                 favoriteArray.append(selected)
             }
             else{
+                let recipeRemoval = MessageView.viewFromNib(layout: .cardView)
+                recipeRemoval.configureTheme(.success)
+                recipeRemoval.configureDropShadow()
+                recipeRemoval.configureContent(title: "", body: "Recipe removed from your favorites")
+                recipeRemoval.button?.isHidden = true
+                SwiftMessages.show(config: successConfig, view: recipeRemoval)
                 self.removeFromFavorite(recipeId: selected["recipe_id"] as? String)
             }
         } else {
@@ -150,7 +171,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             var cellLabelString = (dict["title"]) as? String
             cellLabelString = cellLabelString?.replacingOccurrences(of: "amp;", with: "")
             cell.headLabel?.text = cellLabelString
-            cell.publisherLabel?.text = dict["publisher"] as? String
+            let formattedLabel = dict["publisher"] as? String
+            cell.publisherLabel?.text = "By " + formattedLabel!
             let urlString = dict["image_url"]
             webURL = dict["source_url"] as! String
             let url = URL(string: urlString as! String )
@@ -196,14 +218,39 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         adBannerView?.delegate = self
         adBannerView?.rootViewController = self
         adBannerView?.load(GADRequest())
-        // Do any additional setup after loading the view.
+        interstitialAd = FBInterstitialAd(placementID: "VID_HD_16_9_46S_APP_INSTALL#204874410193338_204875056859940")
+        interstitialAd?.delegate = self
+        
+//        var ref: DatabaseReference!
+//        ref = Database.database().reference()
+//        ref.child("recipes").setValue(["recipesList": ]) {
+//            (error:Error?, ref:DatabaseReference) in
+//            if let error = error {
+//                print("Data could not be saved: \(error).")
+//            } else {
+//                print("Data saved successfully!")
+//            }
+//        }
+        // Commenting FB Ads loading code
+        //        DispatchQueue.main.asyncAfter(deadline: .now() + 11) {
+        //            self.interstitialAd?.load()
+        //        }
     }
+    
+//    func interstitialAdDidLoad(_ interstitialAd: FBInterstitialAd) {
+//        print("Ad is loaded and ready to be displayed")
+//        if (interstitialAd != nil && interstitialAd.isAdValid != nil) {
+//            // You can now display the full screen ad using this code:
+//            interstitialAd.show(fromRootViewController: self)
+//        }
+//    }
+    
     func apiDataFetch() {
         startAnimating(CGSize(width: 60, height: 60), message: "Serving.. Just a second")
         self.HomeTiles!.register(categoriesTableViewCell.self, forCellReuseIdentifier: "categoriesTableViewCell")
         var apiURL = String()
-        let keywords = ["Best", "Top", "healthy"]
-        let number = Int(arc4random_uniform(UInt32(3)))
+        let keywords = ["Best", "Top", "healthy", ""]
+        let number = Int(arc4random_uniform(UInt32(4)))
         globalSearch = keywords[number]
         apiURL = "https://food2fork.com/api/search?key=db6356d5fea03017abb29532c24a4090&q=\(globalSearch)"
         print(apiURL)
@@ -211,6 +258,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             if(responseData.result.isSuccess) {
                 if((responseData.result.value) != nil) {
                     let swiftyJsonVar = JSON(responseData.result.value!)
+                    print("response")
+                    print(swiftyJsonVar)
                     if let resData = swiftyJsonVar["recipes"].arrayObject {
                         self.arrRes = resData as! [[String:AnyObject]]
                     }
@@ -228,6 +277,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     override func viewDidAppear(_ animated: Bool) {
   
+    }
+    func applicationDidFinishLaunching(_ application: UIApplication) {
+        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

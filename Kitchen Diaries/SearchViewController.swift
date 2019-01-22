@@ -4,6 +4,7 @@ import Alamofire
 import SwiftyJSON
 import NVActivityIndicatorView
 import SDWebImage
+import SwiftMessages
 import GoogleMobileAds
 
 protocol searchTableViewCellDelegate:AnyObject {
@@ -156,11 +157,26 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
     func didSelectButton(indexNumber:Int?) -> Void{
         let selected = arrRes[indexNumber!]
         let size = favoriteArray.count
+        var successConfig = SwiftMessages.defaultConfig
+        successConfig.presentationStyle = .center
+        successConfig.presentationContext = .window(windowLevel: UIWindowLevelNormal)
         if size > 0 {
             if !self.checkIsAddedOnFavorite(recipeId: selected["recipe_id"] as? String){
+                let success = MessageView.viewFromNib(layout: .cardView)
+                success.configureTheme(.success)
+                success.configureDropShadow()
+                success.configureContent(title: "", body: "Recipe added to your favorites")
+                success.button?.isHidden = true
+                SwiftMessages.show(config: successConfig, view: success)
                 favoriteArray.append(selected)
             }
             else{
+                let recipeRemoval = MessageView.viewFromNib(layout: .cardView)
+                recipeRemoval.configureTheme(.success)
+                recipeRemoval.configureDropShadow()
+                recipeRemoval.configureContent(title: "", body: "Recipe removed from your favorites")
+                recipeRemoval.button?.isHidden = true
+                SwiftMessages.show(config: successConfig, view: recipeRemoval)
                 self.removeFromFavorite(recipeId: selected["recipe_id"] as? String)
             }
         } else {

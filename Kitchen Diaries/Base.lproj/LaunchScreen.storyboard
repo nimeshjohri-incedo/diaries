@@ -18,24 +18,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="boardTextArea" translatesAutoresizingMaskIntoConstraints="NO" id="hRa-bf-W3V">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coollogo_com-271581330.png" translatesAutoresizingMaskIntoConstraints="NO" id="eFZ-LY-SQ2">
-                                <rect key="frame" x="0.0" y="288" width="375" height="128"/>
-                                <rect key="contentStretch" x="0.050000000000000003" y="0.0" width="1" height="1"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch1" translatesAutoresizingMaskIntoConstraints="NO" id="x62-dG-VG1">
+                                <rect key="frame" x="37" y="183.5" width="300" height="300"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.4823529411764706" green="0.1803921568627451" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="hRa-bf-W3V" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="8gf-zC-7sc"/>
-                            <constraint firstItem="hRa-bf-W3V" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="FXX-Fk-TQc"/>
-                            <constraint firstItem="eFZ-LY-SQ2" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="GHu-bY-UKI"/>
-                            <constraint firstItem="eFZ-LY-SQ2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="268" id="Hc2-7Y-S8I"/>
-                            <constraint firstItem="hRa-bf-W3V" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="HsQ-qE-6Xe"/>
-                            <constraint firstItem="hRa-bf-W3V" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="Syf-FZ-zJ4"/>
-                            <constraint firstItem="eFZ-LY-SQ2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ZSq-4U-1B2"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="eFZ-LY-SQ2" secondAttribute="bottom" constant="251" id="tDh-1B-lWz"/>
+                            <constraint firstItem="x62-dG-VG1" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="V1y-yk-cmM"/>
+                            <constraint firstItem="x62-dG-VG1" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="hqW-Vx-O32"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -46,7 +37,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="boardTextArea" width="1920" height="1271"/>
-        <image name="coollogo_com-271581330.png" width="361" height="206"/>
+        <image name="launch1" width="300" height="300"/>
     </resources>
 </document>
